@@ -100,7 +100,7 @@ namespace Semana7_Acceso_base_datos
             // 
             // bentrar_access_Click
             // 
-            this.bentrar_access_Click.BackColor = System.Drawing.Color.IndianRed;
+            this.bentrar_access_Click.BackColor = System.Drawing.Color.Coral;
             this.bentrar_access_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bentrar_access_Click.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bentrar_access_Click.Location = new System.Drawing.Point(49, 208);
@@ -113,7 +113,7 @@ namespace Semana7_Acceso_base_datos
             // 
             // bentrar_mysql_Click
             // 
-            this.bentrar_mysql_Click.BackColor = System.Drawing.Color.IndianRed;
+            this.bentrar_mysql_Click.BackColor = System.Drawing.Color.Coral;
             this.bentrar_mysql_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bentrar_mysql_Click.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bentrar_mysql_Click.Location = new System.Drawing.Point(219, 207);
@@ -125,7 +125,7 @@ namespace Semana7_Acceso_base_datos
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.IndianRed;
+            this.button3.BackColor = System.Drawing.Color.Coral;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(382, 208);
@@ -137,7 +137,7 @@ namespace Semana7_Acceso_base_datos
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.IndianRed;
+            this.button1.BackColor = System.Drawing.Color.Coral;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(431, 267);
@@ -152,7 +152,7 @@ namespace Semana7_Acceso_base_datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MediumPurple;
+            this.BackColor = System.Drawing.Color.Tan;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(526, 300);
             this.Controls.Add(this.button1);
