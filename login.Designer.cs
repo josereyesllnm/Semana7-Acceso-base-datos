@@ -45,20 +45,22 @@ namespace Semana7_Acceso_base_datos
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(110, 95);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario:";
+            this.label1.Text = "USUARIO:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(110, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Clave:";
+            this.label2.Text = "CLAVE:";
             // 
             // txtusuario
             // 
@@ -79,7 +81,7 @@ namespace Semana7_Acceso_base_datos
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(216, 42);
+            this.label3.Location = new System.Drawing.Point(228, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 16);
             this.label3.TabIndex = 4;
@@ -132,7 +134,7 @@ namespace Semana7_Acceso_base_datos
             this.button3.Text = "SQL SERVER";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,9 +150,10 @@ namespace Semana7_Acceso_base_datos
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "LOGIN";
+            this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

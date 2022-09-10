@@ -23,6 +23,11 @@ namespace Semana7_Acceso_base_datos
         {
             
         }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
  
