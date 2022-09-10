@@ -28,6 +28,11 @@ namespace Semana7_Acceso_base_datos
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
  
