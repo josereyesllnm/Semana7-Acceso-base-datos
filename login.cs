@@ -88,7 +88,7 @@ namespace Semana7_Acceso_base_datos
             {
 
                 //crear la conexion
-                SqlConnection conexion = new SqlConnection(@"server=.\SQLSERVER ; Initial Catalog = login;
+                SqlConnection conexion = new SqlConnection(@"server=.JOSEREYES\Emilio Reyes ; Initial Catalog = login;
                 Integrated Security=True;");
 
                 //abrir conexion
@@ -140,6 +140,12 @@ namespace Semana7_Acceso_base_datos
         private void bentrar_mysql_Click_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("   ¿ESTAS SEGURO QUE QUIERES SALIR?   ");
+            Application.Exit();
         }
     }
 }
