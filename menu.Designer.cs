@@ -29,10 +29,18 @@ namespace Semana7_Acceso_base_datos
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // menu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "menu";
+            this.Name = "menu";
+            this.Text = "Menu";
+            this.Load += new System.EventHandler(this.menu_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

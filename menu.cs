@@ -16,5 +16,10 @@ namespace Semana7_Acceso_base_datos
         {
             InitializeComponent();
         }
+
+        private void menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

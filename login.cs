@@ -53,7 +53,6 @@ namespace Semana7_Acceso_base_datos
                     {
                         menu fm = new menu();
                         fm.Show(); //abrir menu
-                        this.Hide();//ocultar el formulario de login
                     }
 
                 }//Cierre de ciclo for
