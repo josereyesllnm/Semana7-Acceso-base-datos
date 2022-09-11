@@ -121,19 +121,20 @@ namespace Semana7_Acceso_base_datos
             this.bentrar_mysql_Click.TabIndex = 7;
             this.bentrar_mysql_Click.Text = "MySQL";
             this.bentrar_mysql_Click.UseVisualStyleBackColor = false;
+            this.bentrar_mysql_Click.Click += new System.EventHandler(this.bentrar_mysql_Click_Click);
             // 
             // bentrar_sqlserver_Click
             // 
             this.bentrar_sqlserver_Click.BackColor = System.Drawing.Color.Coral;
             this.bentrar_sqlserver_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bentrar_sqlserver_Click.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bentrar_sqlserver_Click.Location = new System.Drawing.Point(382, 208);
+            this.bentrar_sqlserver_Click.Location = new System.Drawing.Point(395, 207);
             this.bentrar_sqlserver_Click.Name = "bentrar_sqlserver_Click";
-            this.bentrar_sqlserver_Click.Size = new System.Drawing.Size(97, 35);
+            this.bentrar_sqlserver_Click.Size = new System.Drawing.Size(98, 35);
             this.bentrar_sqlserver_Click.TabIndex = 8;
             this.bentrar_sqlserver_Click.Text = "SQL SERVER";
             this.bentrar_sqlserver_Click.UseVisualStyleBackColor = false;
-            this.bentrar_sqlserver_Click.Click += new System.EventHandler(this.button3_Click);
+            this.bentrar_sqlserver_Click.Click += new System.EventHandler(this.bentrar_sqlserver_Click_Click);
             // 
             // login
             // 
@@ -153,6 +154,7 @@ namespace Semana7_Acceso_base_datos
             this.Controls.Add(this.label1);
             this.Name = "login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN";
             this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
