@@ -56,7 +56,7 @@ namespace Semana7_Acceso_base_datos
                     if ((txtusuario.Text == registro["usuarios"].ToString()) || (txtclave.Text ==
                     registro["clave"].ToString()))
                     {
-                        
+                        MessageBox.Show("    BIENVENIDO AL INICIO DE SQLSERVER   ");
                         sqlserver fm = new sqlserver();
                         fm.Show();
                        
@@ -99,7 +99,7 @@ namespace Semana7_Acceso_base_datos
 
                 if ((txtusuario.Text == res["Nombre"].ToString()) || (txtclave.Text == res["Clave"].ToString()))
                 {
-
+                    MessageBox.Show("    BIENVENIDO AL INICIO DE MYSQL   ");
                     mysql fprincipal = new mysql();
                     fprincipal.Show();
                   
