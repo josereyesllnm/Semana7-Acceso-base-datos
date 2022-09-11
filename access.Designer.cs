@@ -1,7 +1,7 @@
 ﻿
 namespace Semana7_Acceso_base_datos
 {
-    partial class menu
+    partial class access
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@ namespace Semana7_Acceso_base_datos
         {
             this.SuspendLayout();
             // 
-            // menu
+            // access
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "menu";
-            this.Text = "Menu";
+            this.Name = "access";
+            this.Text = "ACCESS";
             this.Load += new System.EventHandler(this.menu_Load);
             this.ResumeLayout(false);
 

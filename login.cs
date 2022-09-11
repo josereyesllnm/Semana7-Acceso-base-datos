@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,28 +15,136 @@ namespace Semana7_Acceso_base_datos
 {
     public partial class login : Form
     {
-     
+        SqlConnection conexion = new SqlConnection("Data Source=JOSEREYES;Initial Catalog=login;Integrated Security=True");
+        OleDbConnection conexion_access = new OleDbConnection(@"Provider = Microsoft.Jet.OLEDB.4.0; Data Source =C:\Base de Datos\login.mdb;Persist Security Info=False;");
+        MySqlConnection conn = new MySqlConnection("Server=localhost; Database=login; Uid=jose; Pwd=12345");
+
         public login()
         {
             InitializeComponent();
         }
 
-        public object Source { get; private set; }
+ 
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       //BOTON DE SQL SERVER
+
+        private void bentrar_sqlserver_Click_Click(object sender, EventArgs e)
+        {
+            {
+                try
+                {
+         
+                   
+                    conexion.Open();
+                    SqlCommand consulta = new SqlCommand("select usuario, clave from usuarios where usuario = '" + txtusuario + "'And clave = '" + txtclave.Text + "' ", conexion); 
+                    
+                    consulta.ExecuteNonQuery();
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(consulta);
+
+                    da.Fill(ds, "usuarios");
+
+                  
+                    DataRow registro;
+                    registro = ds.Tables["usuarios"].Rows[0];
+
+                   
+                    if ((txtusuario.Text == registro["usuarios"].ToString()) || (txtclave.Text ==
+                    registro["clave"].ToString()))
+                    {
+                        
+                        sqlserver fm = new sqlserver();
+                        fm.Show();
+                       
+                    }
+                }
+             
+                catch
+                {
+                  
+                    MessageBox.Show("Error de usuario o clave de acceso", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            }
+
+
+        }
+
+
+
+
+
+        //
+        //
+        //BOTON DE MYSQL
+
+        private void bentrar_mysql_Click_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                MySqlCommand Pedir = new MySqlCommand("Select Nombre, Clave, CORREO from usuarios where Nombre = '" + txtusuario.Text + "'And clave = '" + txtclave.Text + "'", conn);
+                Pedir.ExecuteNonQuery();
+                DataSet fe = new DataSet();
+                MySqlDataAdapter te = new MySqlDataAdapter(Pedir);
+
+                te.Fill(fe, "usuarios");
+
+                DataRow res;
+                res = fe.Tables["usuarios"].Rows[0];
+
+                if ((txtusuario.Text == res["Nombre"].ToString()) || (txtclave.Text == res["Clave"].ToString()))
+                {
+
+                    mysql fprincipal = new mysql();
+                    fprincipal.Show();
+                  
+
+                }
+
+            }
+            catch
+            {
+
+
+              
+
+                MessageBox.Show("Error de usuario o clave de acceso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+
+
+
+
+
+
+        //
+        //
+        //BOTON DE SALIR
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("   ¿ESTAS SEGURO QUE QUIERES SALIR?   ");
+            Application.Exit();
+        }
+
+
+
+
+        //
+        //
+        //BOTON DE ACCESS
 
         private void bentrar_access_Click_Click(object sender, EventArgs e)
         {
             try
             {
-                //Creado la variable para la nueva conexion
-                OleDbConnection conexion_access = new OleDbConnection();
-
-                //Cadena de conexión para la base de datos
-                //Se recomienda generar la cadena de conexion para evitar errores
-                conexion_access.ConnectionString = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source =
-                C:\Base de Datos\login.mdb;Persist Security Info=False;";
-
-
-                //Abriendo conexion
+              
                 conexion_access.Open();
 
                 //Consulta a tabla de usuarios en la base de datos
@@ -53,12 +162,15 @@ namespace Semana7_Acceso_base_datos
                    registro["clave"].ToString()))
                     {
                         MessageBox.Show("    BIENVENIDO AL INICIO DE ACCESS   ");
-                        menu fm = new menu();
+                        access fm = new access();
                         fm.Show(); //abrir menu
 
                     }
 
                 }//Cierre de ciclo for
+
+                //Finalizando la conexión
+                conexion_access.Close();
 
             }//Cierre de Try
 
@@ -68,84 +180,8 @@ namespace Semana7_Acceso_base_datos
                 MessageBox.Show(err.Message);
                 //en caso que usuario y clave sean incorrectos mostrar mensaje de error
                 MessageBox.Show("Error de usuario o clave de acceso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); txtusuario.Focus();
+                txtusuario.Focus();
             }
-
-            //Finalizando la conexión
-           
-
-        }
-
-        private void login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-        private void bentrar_sqlserver_Click_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                //crear la conexion
-                SqlConnection conexion = new SqlConnection(@"server=.JOSEREYES\Emilio Reyes ; Initial Catalog = login;
-                Integrated Security=True;");
-
-                //abrir conexion
-                conexion.Open();
-
-
-                //cadena de consulta
-                string consultax;
-
-                consultax = "select usuarios, clave from usuarios where usuarios = '" + txtusuario.Text +
-               "'And clave = '" + txtclave.Text + "' ";
-
-                SqlCommand consulta = new SqlCommand(consultax, conexion);
-
-                //ejecuta una instruccion de sql devolviendo el numero de filas encontradas
-                consulta.ExecuteNonQuery();
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(consulta);
-
-                //Llenando el dataAdapter con los datos de la tabla
-                da.Fill(ds, "usuarios");
-
-                //fila de la tabla con la que se trabajara
-                DataRow registro;
-                registro = ds.Tables["usuarios"].Rows[0];
-
-                //evaluando que clave y usuario sean correctos
-                if ((txtusuario.Text == registro["usuario"].ToString()) || (txtclave.Text ==
-                registro["clave"].ToString()))
-                {
-                    MessageBox.Show("    BIENVENIDO AL INICIO DE SQL SERVER   ");
-                    //llamando formulario principal llamado menu
-                    menu fm = new menu();
-                    fm.Show(); //abrir menu
-                }
-
-                }
-              
-            catch
-            {
-                //en caso que la clave sea incorrecta mostrar mensaje de error
-                MessageBox.Show("Error de usuario o clave de acceso", "Error", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-            }
-
-
-        }
-
-        private void bentrar_mysql_Click_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("   ¿ESTAS SEGURO QUE QUIERES SALIR?   ");
-            Application.Exit();
         }
     }
 }

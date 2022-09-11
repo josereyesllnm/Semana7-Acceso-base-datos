@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Semana7_Acceso_base_datos
 {
-    public partial class menu : Form
+    public partial class mysql : Form
     {
-        public menu()
+        public mysql()
         {
             InitializeComponent();
-        }
-
-        private void menu_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
